@@ -52,7 +52,7 @@ const BusinessDesign = () => {
                     </Stack>
                 </Box>
             </GridItem>
-            <GridItem colStart={{base:0,md:4}} colEnd={{base:0,md:7}} bg='' >
+            <GridItem colStart={{base:0,md:4}} colEnd={{base:4,md:7}} bg='' >
                 {/* for viewing of Card  */}
                <BusinessCard/>
             </GridItem>

@@ -172,7 +172,7 @@ const BusinessSetup = () => {
                     </Stack>
                 </Box>
             </GridItem>
-            <GridItem colStart={{base:0,md:4}} colEnd={{base:0,md:7}} bg='' >
+            <GridItem colStart={{base:0,md:4}} colEnd={{base:4,md:7}} bg='' >
                <BusinessCard/>
             </GridItem>
         </Grid>
