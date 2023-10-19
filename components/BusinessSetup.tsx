@@ -1,6 +1,7 @@
 import {Image, Box, Grid, GridItem, Input, Stack, Text, Textarea, Select, Portal } from '@chakra-ui/react'
 import React from 'react'
 import { MdArrowDropDown } from "react-icons/md";
+import BusinessCard from './BusinessCard';
 
 const BusinessSetup = () => {
   return (
@@ -8,7 +9,7 @@ const BusinessSetup = () => {
         <Grid templateColumns='repeat(5, 1fr)' gap={4}>
             <GridItem colSpan={{base:5,md:3}}  >
                 <Text pb={2} fontWeight={'semibold'} fontSize={{base:"xl"}}>Profile Information</Text>
-                <Text fontSize={{base:"xs"}}>Add your profile information to show in your digital business card</Text>
+                <Text color={'blackAlpha.600'} fontSize={{base:"xs"}}>Add your profile information to show in your digital business card</Text>
                 <Box pt={3} pb={3} >
                     <Text pb={2} fontSize={{base:"sm"}}>User Image</Text>
                     <Image alt='' borderRadius={'full'} boxSize={100} src='/_images/defaultImg.png'/>
@@ -90,7 +91,7 @@ const BusinessSetup = () => {
                     </Stack>
                 </Box>
                 <Text pb={2} fontWeight={'semibold'} pt={4} fontSize={{base:"xl"}}>Contact Details</Text>
-                <Text pb={4} fontSize={{base:"xs"}}>Add contact information</Text>
+                <Text pb={4} color={'blackAlpha.600'} fontSize={{base:"xs"}}>Add contact information</Text>
                 <Box pb={3}>
                     <Grid templateColumns='repeat(4, 1fr)' gap={4}>
                         <GridItem colSpan={{base:5,md:2}} bg='' >
@@ -172,27 +173,7 @@ const BusinessSetup = () => {
                 </Box>
             </GridItem>
             <GridItem colStart={{base:0,md:4}} colEnd={{base:0,md:7}} bg='' >
-                <Box shadow={'dark-lg'} mx={'auto'} overflow={'hidden'} bg={'black'} position={'sticky'}  top={'10'} borderRadius={35} border={'8px'} height={'500px'} width={'270px'}> 
-                    <Box position={'relative'} top={2}  >
-                        <Box position={'absolute'} width={'full'} top={0} zIndex={'-2'}   > 
-                            <Box position={'relative'} left={-20} width={'180%'} className='rotate-[25deg]' >
-                                <Image  objectFit='cover' src="/_images/doodad1.png" height={230} width={'100%'} /> 
-                                <Box position={'absolute'} opacity={'0.9'} top={0} height={230} width={'100%'} bgGradient='linear(to-r, pink.600, orange.400)'  >
-                                </Box>
-                            </Box>
-                        </Box>
-                        <Box position={'absolute'} bg={'white'} left={-20} overflow={'hidden'} height={'180px'} className='rotate-[25deg]' width={'180%'} top={'23.5'} zIndex={'-1'}   > 
-                            <Image  objectFit='cover' mt={-10} height={280} width={'full'} src="/_images/buildings.jpg"  className='rotate-[-25deg]'  /> 
-                            <Box position={'absolute'} opacity={'0.75'} top={0} height={230} width={'100%'} bg='white'  >
-                                </Box>
-                            <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={10}  height={230} pl={210}/>
-                            <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={10} pl={70}  height={65}/>
-                        </Box>
-                    </Box>
-                    {/* Typograph here */}
-
-
-                </Box>
+               <BusinessCard/>
             </GridItem>
         </Grid>
     </div>

@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 import {HiEye} from "react-icons/hi2"
 import { Tabs,TabList,TabIndicator,TabPanels,TabPanel,Tab, Box, Heading,Text, Portal } from "@chakra-ui/react"
 import BusinessDesign from "@/components/BusinessDesign"
+import BusinessLaunch from "@/components/BusinessLaunch"
 const page = () => {
   return (
     <div className="h-96 pt-1">
@@ -60,14 +61,14 @@ const page = () => {
             />
          
             <TabPanels boxShadow={"lg"}>
-                <TabPanel shadow={'lg'} minHeight={{base:"100vh",md:"87vh",lg:"75.9vh",xl:"82.9vh"}} maxHeight={{base:"100vh",md:"82vh",lg:"81.9vh",xl:"82.9vh"}} overflow={'scroll'}>
+                <TabPanel shadow={'lg'} minHeight={{base:"100vh",md:"87vh",lg:"75.9vh",xl:"86.5vh"}} maxHeight={{base:"100vh",md:"82vh",lg:"81.9vh",xl:"82.9vh"}} overflow={'scroll'}>
                     <BusinessSetup/>
                 </TabPanel>
-                <TabPanel shadow={'lg'} minHeight={{base:"100vh",md:"87vh",lg:"75.9vh",xl:"83.4vh"}} maxHeight={{base:"100vh",md:"82vh",lg:"81.9vh",xl:"70.4vh"}} overflow={'scroll'}>
+                <TabPanel shadow={'lg'} minHeight={{base:"100vh",md:"87vh",lg:"75.9vh",xl:"86.5vh"}} maxHeight={{base:"100vh",md:"82vh",lg:"81.9vh",xl:"70.4vh"}} overflow={'scroll'}>
                     <BusinessDesign/>
                 </TabPanel>
-                <TabPanel  minHeight={"100vh"}>
-                    <p>three!</p>
+                <TabPanel  shadow={'lg'} minHeight={{base:"100vh",md:"87vh",lg:"75.9vh",xl:"86.5vh"}} maxHeight={{base:"100vh",md:"82vh",lg:"81.9vh",xl:"70.4vh"}} overflow={'scroll'}>
+                    <BusinessLaunch/>
                 </TabPanel>
             </TabPanels>
         </Tabs>

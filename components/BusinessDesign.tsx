@@ -1,6 +1,7 @@
 import { Box, Divider, Grid, GridItem, Select, Stack, Text } from "@chakra-ui/react"
 import { GithubPicker, SketchPicker, SwatchesPicker, TwitterPicker } from 'react-color';
 import { MdArrowDropDown } from "react-icons/md";
+import BusinessCard from "./BusinessCard";
 const BusinessDesign = () => {
   return (
     <div className='p-2 h-full '>
@@ -51,8 +52,9 @@ const BusinessDesign = () => {
                     </Stack>
                 </Box>
             </GridItem>
-            <GridItem colStart={{base:0,md:4}} colEnd={{base:0,md:7}} bg='papayawhip' >
+            <GridItem colStart={{base:0,md:4}} colEnd={{base:0,md:7}} bg='' >
                 {/* for viewing of Card  */}
+               <BusinessCard/>
             </GridItem>
         </Grid>
     </div>
