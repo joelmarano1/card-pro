@@ -21,9 +21,9 @@ const Navbar = () => {
                   <Image
                     boxSize='2rem'
                     borderRadius='full'
-                    src='https://scontent.fmnl5-2.fna.fbcdn.net/v/t39.30808-1/298400958_4842043112563572_3512472702234696023_n.jpg?stp=dst-jpg_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH9WPCBfVKSzqiikEHKcxKDYc0Nlygp9u1hzQ2XKCn27Zx8knGzdrnwam8SD88_EmlLp-SKxkfpAmvSA7GtePjG&_nc_ohc=uoFydG0SBlkAX_w5r4a&_nc_ht=scontent.fmnl5-2.fna&cb_e2o_trans=t&oh=00_AfBpkemw7YU7y1FsSNbg1CYn8y2LP1RXtW0km366LMS4dA&oe=652C3B55'
+                    src='/_images/avatar.png'
                     alt='Simon the pensive'
-                    mr='12px'
+                    mr='15px'
                   />  Joel Marano
                   </div>
                 </MenuButton>

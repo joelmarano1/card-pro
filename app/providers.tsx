@@ -4,22 +4,18 @@ import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Montserrat } from 'next/font/google';
 const components = {
-  fonts:{
-    heading: "Open Sans",
-    subHeading: "Times New Roman",
-    body: "Courier",
-  },
-  components:{
+  
+  
     Input: {
       baseStyle: {
         field: {
-        
+          
         }
       },
       variants: {
         outline: {
           field: {
-            borderColor: "gray.300",
+            borderColor: "blackAlpha.300",
           }
         }
       }
@@ -33,12 +29,12 @@ const components = {
       variants: {
         outline: {
           field: {
-            borderColor: "gray.300",
+            borderColor: "blackAlpha.300",
           }
         }
       }
     }
-  }
+  
 }
 
 const theme = extendTheme({ components });
