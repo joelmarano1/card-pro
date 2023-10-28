@@ -2,6 +2,7 @@
 
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 const components = {
   
@@ -38,7 +39,10 @@ const components = {
 }
 
 const theme = extendTheme({ components });
-
+export const metadata: Metadata = {
+  title: 'Card Pro',
+  description: 'Digital Cards',
+}
 export function Providers({ 
     children 
   }: { 

@@ -18,7 +18,7 @@ const BusinessDesign = (props:CardProps) => {
         if(props.parentProps) props.parentProps("secondary_color",color.hex)
    }
   return (
-    <div className='p-2 h-full '>
+    <div className='md:p-2 h-full '>
         <Grid templateColumns='repeat(5, 1fr)' gap={4}>
             <GridItem colSpan={{base:5,md:3}}  >
                 <Text pb={2} fontWeight={'semibold'}fontSize={{base:"xl"}}>Color</Text>
