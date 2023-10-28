@@ -9,21 +9,18 @@ import {Grid,GridItem} from '@chakra-ui/react';
 import SideNav from '@/components/SideNav';
 import { noto_sans, oswald, roboto, roboto_condensed } from '@/constants';
 import { usePathname } from 'next/navigation';
-
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname();
-const showHeader = pathname === '/login' ? false : true;
+const pathname = usePathname();
+const noHeaders = ['/login','/shared_card'];
+const showHeader = noHeaders.includes(pathname) ? false : true;
   return (
     <html lang="en">
       <body className={noto_sans.className}>
         <Providers>
-          
           {showHeader ? (
            <> 
               <Navbar/>
