@@ -5,8 +5,6 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 const components = {
-  
-  
     Input: {
       baseStyle: {
         field: {
@@ -32,6 +30,17 @@ const components = {
           field: {
             borderColor: "blackAlpha.300",
           }
+        }
+      }
+    },
+    Textarea: {
+      baseStyle: {
+        field: {
+        }
+      },
+      variants: {
+        outline: {
+            borderColor: "blackAlpha.300",
         }
       }
     }

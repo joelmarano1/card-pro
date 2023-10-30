@@ -88,7 +88,7 @@ const BusinessSetup = (props:CardProps) => {
                         </GridItem>
                         <GridItem colStart={{base:1,md:3}} colEnd={{base:6,md:5}} bg='' >
                             <Stack spacing={2}>
-                                <Text fontSize={'sm'}>Suffix</Text>
+                                <Text fontSize={'sm'} maxLength="2">Suffix</Text>
                                 <Input placeholder='' size='sm'  name='suffix' textTransform={'uppercase'} onChange={handleInput}  />
                             </Stack>
                         </GridItem>
@@ -113,7 +113,7 @@ const BusinessSetup = (props:CardProps) => {
                 <Box pb={3}>
                     <Stack spacing={2}>
                         <Text fontSize={'sm'}>Summary</Text>
-                        <Textarea placeholder='' size='sm'  name='summary' onChange={handleInput} />
+                        <Textarea  placeholder='' size='sm'  name='summary' onChange={handleInput} />
                     </Stack>
                 </Box>
                 <Box pb={3}>

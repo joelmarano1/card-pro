@@ -39,9 +39,9 @@ const authOptions: NextAuthOptions = {
 
         })
     ],
-    session: {
-        strategy:"jwt"
-    },
+    // session: {
+    //     strategy:"jwt"
+    // },
     secret: process.env.NEXTAUTH_URL,
 };
 const handler  = NextAuth(authOptions)

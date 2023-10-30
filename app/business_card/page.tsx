@@ -2,7 +2,7 @@
 import BusinessSetup from "@/components/BusinessSetup"
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 import {HiEye} from "react-icons/hi2"
-import { Tabs,TabList,TabIndicator,TabPanels,TabPanel,Tab, Box, Heading,Text, Portal } from "@chakra-ui/react"
+import { Tabs,TabList,TabIndicator,TabPanels,TabPanel,Tab, Box, Heading,Text, Portal, Button } from "@chakra-ui/react"
 import BusinessDesign from "@/components/BusinessDesign"
 import BusinessLaunch from "@/components/BusinessLaunch"
 import { useEffect, useState } from "react"
@@ -10,24 +10,45 @@ import { useSession } from "next-auth/react"
 import { redirect } from "next/navigation"
 const page = () => {
     const {data:session, status} = useSession();
-    if(!session?.user)  redirect('/login')
-    console.log(status)
+    if(!session?.user && status === "unauthenticated" ) redirect('/login')
     const [card, setCard] = useState({
         'first_name' : '',
         'last_name' : '',
     })
+    const [tabIndex, setTabIndex] = useState(0)
+    const [buttonState, setButtonState] = useState({
+        'back': true,
+        'finish':false,
+    })
     const handleState = (name:string,value:string) => {
         setCard({...card,[name]:value})
         console.log(card)
+    } 
+    const handleTab = (index:number )=> {
+        setTabIndex(index)
     }
-    
-    
-  return (
-    <div className="h-96 pt-1">
+    const prevNextTab = (index:number,type:string) => {
+        if(type === "prev" && index !== 0) {
+            setTabIndex(index-1)
+            if(index === 1)setButtonState({...buttonState,['back']: true,['finish']:false})
+            else if(index === 2) setButtonState({...buttonState,['back']: false,['finish']:false})
+        } 
+        else if(type === "next" && index !== 2) {
+            setTabIndex(index+1) 
+            if(index === 0 )  setButtonState({...buttonState,['back']: false,['finish']:false})
+            else if(index === 1) setButtonState({...buttonState,['back']: false,['finish']:true})
+        } 
         
-        <Tabs  position="relative"  variant="unstyled" >
-            <TabList position={'sticky'} top={{base:0,md:19}} shadow={"lg"} zIndex={"sticky"}  blockSize={{base:"52px",lg:"70px"}} >
-                <Tab bg={'#f2f2f2'} width={{base:"51rem",md:"40",lg:"72"}} textAlign="left">
+        if(type === "next" && index === 2 && buttonState.finish){
+            //***save data here***// 
+        }
+
+    }
+    return (
+    <div className="h-96 pt-1">
+        <Tabs  index={tabIndex} onChange={handleTab} position="relative"  variant="unstyled" >
+            <TabList  position={'sticky'} top={{base:0,md:19}} shadow={"lg"} zIndex={"sticky"}  blockSize={{base:"52px",lg:"70px"}} >
+                <Tab bg={'#f2f2f2'}  width={{base:"51rem",md:"40",lg:"72"}} textAlign="left">
                     <Box className="w-full">
                         <Text py='1' color={'gray.500'} fontSize={{base:"xs",md:"2xs"}} >
                             Step 1
@@ -47,7 +68,7 @@ const page = () => {
                         </Heading>
                     </Box>
                 </Tab>
-                <Tab bg={'#f2f2f2'} width={{base:"51rem",md:"40",lg:"72"}} textAlign="left">
+                <Tab bg={'#f2f2f2'}  width={{base:"51rem",md:"40",lg:"72"}} textAlign="left">
                     <Box className="w-full">
                         <Text py='1' color={'gray.500'} fontSize={{base:"xs",md:"2xs"}} >
                             Step 3
@@ -60,14 +81,14 @@ const page = () => {
                 <Tab border={"1px"}  alignItems={'center'} display={{base:'flex',md:'none'}} width={{base:"15",md:"40",lg:"72"}} fontWeight={'bold'} bgColor={'#E2E2E3'}>
                     <HiEye display={{base:"block",md:"none",lg:"none"}}/>
                 </Tab>
-                <Tab  width={{base:"12",md:"40",lg:"72"}} fontWeight={'bold'} bgColor={'#E2E2E3'}textAlign="left">
+                <Button isDisabled={buttonState.back} onClick={() => {prevNextTab(tabIndex,"prev")}} width={{base:"12",md:"40",lg:"72"}} height={'full'} rounded={'none'} fontWeight={'bold'} bgColor={'#E2E2E3'}textAlign="left">
                     <Text fontSize={{base:"3xs",md:"md"}} display={{base:"none",md:"block",lg:"block"}}>  BACK</Text>
                     <ChevronLeftIcon display={{base:"block",md:"none",lg:"none"}}/>
-                </Tab>
-                <Tab  width={{base:"12",md:"40",lg:"72"}} bgColor={'#8959D9'} fontWeight={'bold'} color={'white'}textAlign="left">
-                    <Text fontSize={{base:"3xs",md:"md"}} display={{base:"none",md:"block",lg:"block"}}>  NEXT <ChevronRightIcon/></Text>
-                    <ChevronRightIcon display={{base:"block",md:"none",lg:"none"}}/>
-                </Tab>
+                </Button>
+                <Button  onClick={() => {prevNextTab(tabIndex,"next")}}  height={'full'} rounded={'none'} width={{base:"12",md:"40",lg:"72"}} colorScheme="purple" fontWeight={'bold'} color={'white'}textAlign="left">
+                    <Text fontSize={{base:"3xs",md:"md"}} display={{base:"none",md:"block",lg:"block"}}> {buttonState.finish ? "FINISH" : "NEXT"}  <ChevronRightIcon/></Text>
+                     <ChevronRightIcon display={{base:"block",md:"none",lg:"none"}}/>
+                </Button>
             </TabList>
             <TabIndicator
             mt="-1.5px"
