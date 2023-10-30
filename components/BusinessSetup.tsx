@@ -89,7 +89,7 @@ const BusinessSetup = (props:CardProps) => {
                         <GridItem colStart={{base:1,md:3}} colEnd={{base:6,md:5}} bg='' >
                             <Stack spacing={2}>
                                 <Text fontSize={'sm'} >Suffix </Text>
-                                <Input placeholder='' size='sm'  name='suffix' textTransform={'uppercase'} onChange={handleInput}  />
+                                <Input placeholder='' maxLength={2} size='sm'  name='suffix' textTransform={'uppercase'} onChange={handleInput}  />
                             </Stack>
                         </GridItem>
                     </Grid>
