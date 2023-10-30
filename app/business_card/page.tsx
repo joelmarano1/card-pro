@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react"
 import { redirect } from "next/navigation"
 const page = () => {
     const {data:session, status} = useSession();
-    if(!session?.user && status === "unauthenticated" ) redirect('/login')
+    // if(!session?.user && status === "unauthenticated" ) redirect('/login')
     const [card, setCard] = useState({
         'first_name' : '',
         'last_name' : '',
@@ -41,8 +41,8 @@ const page = () => {
         
         if(type === "next" && index === 2 && buttonState.finish){
             //***save data here***// 
-        }
 
+        }
     }
     return (
     <div className="h-96 pt-1">
