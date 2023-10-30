@@ -8,26 +8,26 @@ const SharedCard = () => {
   return (
     <div className="relative bg-gray-300 h-[100vh] top-0">
         <AbsoluteCenter className='bg-yellow-600' display={'flex'} width={{base:"100vw", sm:"480px",md:"480px",lg:"480px"}}>
-            <Box shadow={'dark-lg'} mx-auto overflowY={'scroll'} overflowX={'hidden'} top={0} position={'sticky'} bg={'black'} minHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"80.5vh"}} maxHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"86.5vh"}} width={{lg:"480px"}}> 
+            <Box shadow={'dark-lg'} overflowY={'scroll'} overflowX={'hidden'} top={0} position={'sticky'} bg={'black'} minHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"80.5vh"}} maxHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"86.5vh"}} width={{lg:"480px"}}> 
                 <Box position={'relative'}>
                     <Box position={'absolute'} width={'29rem'} left={'-10'} top={10} zIndex={'-2'}> 
                         <Box position={'relative'} left={-30} width={'140%'} className='rotate-[25deg]' >
                             <Image  objectFit='cover' src="/_images/doodad1.png" height={330} width={'100%'} /> 
-                            <Box position={'absolute'} opacity={'0.9'} top={0} height={330} width={'100%'} bgGradient='linear(to-r, pink.600, orange.400)'  >
+                            <Box  position={'absolute'} opacity={'0.9'} top={0} height={330} width={'100%'} bgGradient='linear(to-r, pink.600, orange.400)'  >
                             </Box>
                         </Box>
                         <Box position={'absolute'} bg={'white'} left={-20} overflow={'hidden'} height={'270px'} className='rotate-[25deg]' width={'180%'} top={'3em'} zIndex={'tooltip'}   > 
-                        <Image objectFit='cover' mt={{base:'-90'}} height={450} width={{base:'400'}} src="/_images/buildings.jpg" left={30}  className='rotate-[-25deg]'/> 
+                        <Image objectFit='cover' mt={{base:'-90'}} height={470} width={{base:'400'}} src="/_images/buildings.jpg" left={35}  className='rotate-[-25deg]'/> 
                          <Box position={'absolute'} opacity={'0.75'} top={0}  height={450} width={'100%'} bg='white'>
                         </Box>
-                        <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={100}  height={320} pl={320}/>
-                        <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={100} pl={100} height={105}/> 
+                        <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg] pl-[90vw] xs:pl-[350px] sm:pl-[50vw] md:pl-[56vw] lg:pl-[430px] 2xl:pl-[440px] ' top={99} height={320}/>
+                        <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={50} pl={100} height={'13vh'}/> 
                         </Box>
                     </Box>
                    
                 </Box>
                 {/* Typograph here */}
-                <Box position={'relative'} top={'430'}  px={10} mb={'35em'}>
+                <Box position={'relative'} top={'380'}  px={5} mb={'35em'}>
                     <Stack color={'white'} fontSize={'2xl'} fontWeight={'extrabold'} width={'75%'} pb={1} >
                         <Text noOfLines={2} className={montserrat.className} lineHeight={'7'}>GABRIEL MARANO</Text>
                     </Stack>
@@ -53,7 +53,7 @@ const SharedCard = () => {
                             </Stack>
                         </Stack>
                     </Box>
-                    <Box pb={2} mb={2}>
+                    <Box pb={2} mt={'1rem'}>
                         <Center>
                             <Stack direction={'row'} >
                                 <Image alt='' objectFit={'cover'} borderRadius={'full'} boxSize={'50px'} src='/_images/icons8-facebook-240.png'/>
@@ -62,7 +62,7 @@ const SharedCard = () => {
                             </Stack>
                         </Center>
                     </Box>
-                    <Box position={'relative'} w-100 className='mb-["10vh"]'>
+                    <Box position={'relative'} w-100 mt={'1rem'} className='mb-["10vh"]'>
                         <Box verticalAlign={'center'}>
                             <Button border='2px' borderRadius={10} borderColor='orange.400' padding={4} width='100%' maxWidth='1366px' colorScheme='transparent' leftIcon={<MdOfflineShare/>} px={'20'} size={'3xl'} fontSize={'xs'}>SHARE YOUR CONTACT</Button>
                         </Box>
@@ -73,7 +73,7 @@ const SharedCard = () => {
                     </Box>
                 </Box>
                 <Box bg-orange-300 w-auto h-20 position={'relative'}>
-                    <Button boxShadow='2xl' borderRadius={'100px'} rounded='md' margin={3} colorScheme={'orange'} pos={'fixed'} bottom={2} w='94%' padding={4} leftIcon={<MdPersonAddAlt/>} size={'3xl'} fontSize={'xs'}>
+                    <Button boxShadow='2xl' borderRadius={'100px'} rounded='md' margin={3} colorScheme={'orange'} pos={'fixed'} bottom={4} w='94%' padding={4} leftIcon={<MdPersonAddAlt/>} size={'3xl'} fontSize={'xs'}>
                     ADD TO CONTACTS</Button>
                 </Box>
             </Box>
