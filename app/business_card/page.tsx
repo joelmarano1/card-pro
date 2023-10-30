@@ -5,8 +5,13 @@ import {HiEye} from "react-icons/hi2"
 import { Tabs,TabList,TabIndicator,TabPanels,TabPanel,Tab, Box, Heading,Text, Portal } from "@chakra-ui/react"
 import BusinessDesign from "@/components/BusinessDesign"
 import BusinessLaunch from "@/components/BusinessLaunch"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useSession } from "next-auth/react"
+import { redirect } from "next/navigation"
 const page = () => {
+    const {data:session, status} = useSession();
+    if(!session?.user)  redirect('/login')
+    console.log(status)
     const [card, setCard] = useState({
         'first_name' : '',
         'last_name' : '',
@@ -14,8 +19,9 @@ const page = () => {
     const handleState = (name:string,value:string) => {
         setCard({...card,[name]:value})
         console.log(card)
-
     }
+    
+    
   return (
     <div className="h-96 pt-1">
         

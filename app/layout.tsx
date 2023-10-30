@@ -9,17 +9,19 @@ import {Grid,GridItem} from '@chakra-ui/react';
 import SideNav from '@/components/SideNav';
 import { noto_sans, oswald, roboto, roboto_condensed } from '@/constants';
 import { usePathname } from 'next/navigation';
+import AuthProvider from '@/components/AuthProvider'
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
 const pathname = usePathname();
-const noHeaders = ['/login','/shared_card'];
+const noHeaders = ['/login','/shared_card','/signup'];
 const showHeader = noHeaders.includes(pathname) ? false : true;
   return (
     <html lang="en">
       <body className={noto_sans.className}>
+      <AuthProvider>
         <Providers>
           {showHeader ? (
            <> 
@@ -34,12 +36,13 @@ const showHeader = noHeaders.includes(pathname) ? false : true;
                     <SideNav/>
                 </GridItem>
                 <GridItem colSpan={{base:6,lg:5}}  >
-                  {children}
+                   {children}
                   </GridItem>
               </Grid>
             </>) : children } 
           
         </Providers>
+        </AuthProvider>
         </body>
     </html>
   )

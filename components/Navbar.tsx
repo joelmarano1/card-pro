@@ -1,7 +1,10 @@
 "use client"
 import { Menu,MenuButton,MenuList,MenuItem,Button, Image } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react"
 const Navbar = () => {
+  const {data:session,status} = useSession();
   return (
     <nav className=" h-full flex items-center justify-between pb-3 px-4 z-50 lg:px-2 py-3 bg-[#8959D9]  ">
         <div className="flex items-center gap-2 text-white lg:pl-10" >
@@ -24,12 +27,12 @@ const Navbar = () => {
                     src='/_images/avatar.png'
                     alt='Simon the pensive'
                     mr='15px'
-                  />  Joel Marano
+                  />  {session?.user?.name}
                   </div>
                 </MenuButton>
                 <MenuList zIndex={'tooltip'} >
                   <MenuItem>My Profile</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem onClick={() => signOut({ callbackUrl: '/login' })}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </div>

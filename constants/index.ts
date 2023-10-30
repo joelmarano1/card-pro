@@ -1,5 +1,5 @@
 import { Montserrat, Noto_Sans, Oswald, Roboto, Roboto_Condensed,Raleway,Open_Sans,Lekton,Crete_Round,Poppins } from "next/font/google";
-
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export const roboto_condensed = Roboto_Condensed({
     weight: "300",
     subsets: ['latin'],
