@@ -1,30 +1,31 @@
-import { AbsoluteCenter, Box, Button, Center, Circle, Divider, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react'
+import { AbsoluteCenter, Box, Button, Center, Circle, Divider, Image, SimpleGrid, Stack, Text, Tooltip } from '@chakra-ui/react'
 import React from 'react'
 import { Montserrat } from 'next/font/google'
 import { montserrat, noto_sans, roboto_condensed } from '@/constants'
 import { MdOfflineShare, MdPersonAddAlt } from 'react-icons/md'
 import { relative } from 'path'
+import { transform } from 'framer-motion'
 const SharedCard = () => {
   return (
     <div className="relative bg-gray-300 h-[100vh] top-0">
         <AbsoluteCenter className='bg-yellow-600' display={'flex'} width={{base:"100vw", sm:"480px",md:"480px",lg:"480px"}}>
             <Box shadow={'dark-lg'} overflowY={'scroll'} overflowX={'hidden'} top={0} position={'sticky'} bg={'black'} minHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"80.5vh"}} maxHeight={{base:"100vh",md:"100vh",lg:"100vh",xl:"86.5vh"}} width={{lg:"480px"}}> 
                 <Box position={'relative'}>
-                    <Box position={'absolute'} width={'29rem'} left={'-10'} top={10} zIndex={'-2'}> 
-                        <Box position={'relative'} left={-30} width={'140%'} className='rotate-[25deg]' >
+                    <Box position={'absolute'}  width={'29rem'} left={'-10'} top={0}  className=''> 
+                        <Box position={'relative'} left={-30} width={'140%'} className='rotate-[23deg] '  >
                             <Image  objectFit='cover' src="/_images/doodad1.png" height={330} width={'100%'} /> 
                             <Box  position={'absolute'} opacity={'0.9'} top={0} height={330} width={'100%'} bgGradient='linear(to-r, pink.600, orange.400)'  >
                             </Box>
                         </Box>
-                        <Box position={'absolute'} bg={'white'} left={-20} overflow={'hidden'} height={'270px'} className='rotate-[25deg]' width={'180%'} top={'3em'} zIndex={'tooltip'}   > 
-                        <Image objectFit='cover' mt={{base:'-90'}} height={470} width={{base:'400'}} src="/_images/buildings.jpg" left={35}  className='rotate-[-25deg]'/> 
-                         <Box position={'absolute'} opacity={'0.75'} top={0}  height={450} width={'100%'} bg='white'>
-                        </Box>
-                        <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg] pl-[90vw] xs:pl-[350px] sm:pl-[50vw] md:pl-[56vw] lg:pl-[430px] 2xl:pl-[440px] ' top={99} height={320}/>
-                        <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={50} pl={100} height={'13vh'}/> 
+                        <Box  position={'absolute'} willChange={'transform'} overflow={'hidden'} bg={'white'} left={-20} height={'270px'} className='rotate-[23deg] ' width={'180%'} top={'3em'} > 
+                            {/* <Image zIndex={'overlay'} position={'absolute'} objectFit='cover'  mt={{base:'-90'}} height={370} width={{base:'400'}} src="/_images/buildings.jpg" left={35}  className='rotate-[-23deg]'/>  */}
+                            <Box   overflow={'hidden'} position={'relative'} opacity={'0.25'} top={0}  height={370} width={'100%'} bg='red'>
+                                <Image  position={'relative'} objectFit='cover' top={-10} mt={{base:'-90'}} height={470} width={{base:'400'}} src="/_images/buildings.jpg" left={35}  className='rotate-[-23deg]'/>  
+                            </Box>
+                            <Image  src="/_images/man.png" objectFit={'cover'}  position={'absolute'}  className='rotate-[-23deg] pl-[90vw] xs:pl-[350px] sm:pl-[50vw] md:pl-[56vw] lg:pl-[430px] 2xl:pl-[440px] ' top={99} height={320} />
+                            <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'} className='rotate-[-23deg]' top={50} pl={100} height={'13vh'}/> 
                         </Box>
                     </Box>
-                   
                 </Box>
                 {/* Typograph here */}
                 <Box position={'relative'} top={'380'}  px={5} mb={'35em'}>
@@ -72,8 +73,8 @@ const SharedCard = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Box bg-orange-300 w-auto h-20 position={'relative'}>
-                    <Button boxShadow='2xl' borderRadius={'100px'} rounded='md' margin={3} colorScheme={'orange'} pos={'fixed'} bottom={4} w='94%' padding={4} leftIcon={<MdPersonAddAlt/>} size={'3xl'} fontSize={'xs'}>
+                <Box className='bg-black w-full h-20' bottom={0} position={'fixed'} >
+                    <Button boxShadow='2xl' borderRadius={'100px'} rounded='md' margin={3} colorScheme={'orange'}  bottom={4} w='94%' padding={4} leftIcon={<MdPersonAddAlt/>} size={'3xl'} fontSize={'xs'}>
                     ADD TO CONTACTS</Button>
                 </Box>
             </Box>
