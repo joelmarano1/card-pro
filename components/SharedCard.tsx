@@ -20,7 +20,7 @@ const SharedCard = () => {
                         <Image objectFit='cover' mt={{base:'-90'}} height={470} width={{base:'400'}} src="/_images/buildings.jpg" left={35}  className='rotate-[-25deg]'/> 
                          <Box position={'absolute'} opacity={'0.75'} top={0}  height={450} width={'100%'} bg='white'>
                         </Box>
-                        <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg] pl-[90vw] xs:pl-[350px] sm:pl-[50vw] md:pl-[56vw] lg:pl-[430px] 2xl:pl-[440px] ' top={99} height={320}/>
+                        <Image src="/_images/man.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg] pl-[85vw] xs:pl-[350px] sm:pl-[50vw] md:pl-[56vw] lg:pl-[430px] 2xl:pl-[440px]' top={'80px'} height={340}/>
                         <Image src="/_images/ford-logo.png" objectFit={'cover'} position={'absolute'}  className='rotate-[-25deg]' top={50} pl={100} height={'13vh'}/> 
                         </Box>
                     </Box>
@@ -72,7 +72,7 @@ const SharedCard = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Box bg-orange-300 w-auto h-20 position={'relative'}>
+                <Box className='bg-gray-300' w-auto h-20 position={'relative'}>
                     <Button boxShadow='2xl' borderRadius={'100px'} rounded='md' margin={3} colorScheme={'orange'} pos={'fixed'} bottom={4} w='94%' padding={4} leftIcon={<MdPersonAddAlt/>} size={'3xl'} fontSize={'xs'}>
                     ADD TO CONTACTS</Button>
                 </Box>
